@@ -1,0 +1,13 @@
+.menu {
+  list-style: none;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  background-color: goldenrod;
+  justify-content: space-between;
+
+
+  li {
+    margin: 0 10px;
+  }
+}
