@@ -17,3 +17,14 @@ export const getAllPosts = async () => {
   await db.end()
   return posts.map(({id,title,content}) => {return ({id,title,content})})
 }
+
+export const getPostById = async (id: number) => {
+    const posts = await db.query<Post[]>('SELECT * FROM posts WHERE id = ?', [id])
+    await db.end()
+
+    return posts.length ? {
+      id: posts[0].id,
+      title: posts[0].title,
+      content: posts[0].content,
+    } : undefined;
+}
